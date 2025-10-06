@@ -15,8 +15,8 @@ export class MyMCP extends McpAgent {
 			"add",
 			"Adds two numbers and returns the result as text.",
 			{ 	
-				a: z.number().describe("Primer número a sumar"),
-				b: z.number().describe("Segundo número a sumar") 
+				a: z.number().describe("First number to add"),
+				b: z.number().describe("Second number to add") 
 			},
 			async ({ a, b }) => ({
 				content: [{ type: "text", text: String(a + b) 
@@ -28,9 +28,9 @@ export class MyMCP extends McpAgent {
 			"calculate",
 			"Calculator tool with multiple operations such as addition, subtraction, multiplication, and division. Taking two numbers.",
 			{
-				operation: z.enum(["add", "subtract", "multiply", "divide"]).describe("Tipo de operación aritmética a realizar"),
-				a: z.number().describe("Primer número"),
-				b: z.number().describe("Segundo número"),
+				operation: z.enum(["add", "subtract", "multiply", "divide"]).describe("Type of arithmetic operation to be performed"),
+				a: z.number().describe("first number"),
+				b: z.number().describe("second number"),
 			},
 			async ({ operation, a, b }) => {
 				let result: number;
