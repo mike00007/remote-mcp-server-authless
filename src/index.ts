@@ -26,7 +26,7 @@ export class MyMCP extends McpAgent {
 		// Calculator tool with multiple operations
 		this.server.tool(
 			"calculate",
-			"Adds two numbers and returns the result as text.",
+			"Calculator tool with multiple operations such as addition, subtraction, multiplication, and division. Taking two numbers.",
 			{
 				operation: z.enum(["add", "subtract", "multiply", "divide"]).describe("Tipo de operación aritmética a realizar"),
 				a: z.number().describe("Primer número"),
